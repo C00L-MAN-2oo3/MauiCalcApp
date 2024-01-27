@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalcApp.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="40"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+
+        <Entry Text="{Binding MathematicalExpression}"
+                   FontSize="50"
+                   VerticalOptions="Center"
+                   HorizontalOptions="EndAndExpand"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 10, 0"
+                   IsReadOnly="True"
+                   x:Name="OutputText"/>
+
+        <Grid ColumnSpacing="10"
+                  Grid.Row="1"
+                  RowSpacing="10"
+                  Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="C"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Command="{Binding ClearTextCommand}"/>
+            <Button Text="÷"
+                    CommandParameter="÷"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="×"
+                    CommandParameter="×"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="D"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Command="{Binding DeleteItemCommand}"/>
+
+            <Button Text="9"
+                    CommandParameter="9"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="8"
+                    CommandParameter="8"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="7"
+                    CommandParameter="7"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="–"
+                    CommandParameter="–"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    Command="{Binding PrintCommand}"/>
+
+            <Button Text="6"
+                    CommandParameter="6"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="5"
+                    CommandParameter="5"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="4"
+                    CommandParameter="4"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="+"
+                    CommandParameter="+"
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    Command="{Binding PrintCommand}"/>
+
+            <Button Text="3"
+                    CommandParameter="3"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="2"
+                    CommandParameter="2"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="1"
+                    CommandParameter="1"
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="="
+                    CommandParameter="="
+                    Grid.RowSpan="2"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    Command="{Binding GetResultCommand}"/>
+
+            <Button Text="%"
+                    CommandParameter="%"
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Command="{Binding CalculatePercentCommand}"/>
+            <Button Text="0"
+                    CommandParameter="0"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Command="{Binding PrintCommand}"/>
+            <Button Text="."
+                    CommandParameter="."
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Command="{Binding PrintCommand}"/>
+        </Grid>
+    </Grid>
+</ContentPage>
